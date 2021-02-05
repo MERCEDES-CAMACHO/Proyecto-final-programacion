@@ -113,8 +113,8 @@ Ahora  ejecutaremos el comando ggplot para graficar la  precipitación  en
         ggplot(Pp_pisco, aes(fecha, precipitacion)) +
           geom_line() +
           geom_smooth(span = 0.
-          
-          ![Rplot05](https://user-images.githubusercontent.com/78572913/107045125-27c4e280-6793-11eb-8318-f33d18526e02.png)
+![Rplot05](https://user-images.githubusercontent.com/78572913/107045499-90ac5a80-6793-11eb-99b6-0c940a4e3cdf.png)
+
           
 
         names(Pp_pisco)
