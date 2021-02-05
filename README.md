@@ -5,3 +5,6 @@ Camacho Vega  Mercedes Emerita
 Huayllani  Panuera Dialdina
 León Chaiña  Lisbeth Karola
 Ramos Cerna Alejandra Gianella
+
+
+![Rplot](https://user-images.githubusercontent.com/78572913/107041783-e7fbfc00-678e-11eb-8c91-02ac8af39e89.png)
