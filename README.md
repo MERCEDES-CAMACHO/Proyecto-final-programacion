@@ -22,7 +22,6 @@ Ramos Cerna Alejandra Gianella
 
 ![Rplot](https://user-images.githubusercontent.com/78572913/107041783-e7fbfc00-678e-11eb-8c91-02ac8af39e89.png)
 
-
         # PRECIPITACION
         points_long_lat_pp <- raster::extract(raster_pp[[1]], long_lat, cellnumbers = T)[,1]
         data_long_lat_pp <- t(raster_pp[points_long_lat_pp])
@@ -41,16 +40,13 @@ Ramos Cerna Alejandra Gianella
         #TEMPERATURA MEDIA
         tmedia <- (data_long_lat_tmax+data_long_lat_tmin)/2
         write.csv(tmedia, "FINAL/DATA PISCO/tmedia.csv", quote = F)
+        
         install.packages(c("tidyverse", "ggplot2", "dplyr"))
         install.packages(c("tidyverse", "ggplot2", "dplyr"))
         library(tidyverse)
         library(ggplot2)
         library(dplyr)
-        Pp_pisco <- read.csv("FINAL/DATA PISCO/PP MENSUAL/prep.csv", header = T, sep = ",") %>%
-          tibble() %>%
-          dplyr::select(-X) %>%
-          mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
-        View(Pp_pisco)
+       
         Pp_pisco <- read.csv("FINAL/DATA PISCO/PP MENSUAL/prep.csv", header = T, sep = ",") %>%
           tibble() %>%
           dplyr::select(-X) %>%
@@ -58,6 +54,7 @@ Ramos Cerna Alejandra Gianella
         View(Pp_pisco)
         write.csv(Pp_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/pp.csv")
         colnames(Pp_pisco)
+        
         tmin_pisco <- read.csv("FINAL/DATA PISCO/TMIN/tmin.csv", header = T, sep = ",") %>%
           tibble() %>%
           dplyr::select(-X) %>%
@@ -65,21 +62,24 @@ Ramos Cerna Alejandra Gianella
         View(tmin_pisco)
         write.csv(tmin_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/tmin.csv")
         colnames(tmin_pisco)
-        tmax_pisco <- read.csv("FINAL/DATA PISCO/TMIN/tmin.csv", header = T, sep = ",") %>%
+       
+       tmax_pisco <- read.csv("FINAL/DATA PISCO/TMAX/tmax.csv", header = T, sep = ",") %>%
           tibble() %>%
           dplyr::select(-X) %>%
           mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
         View(tmax_pisco)
         write.csv(tmax_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/tmax.csv")
         colnames(tmax_pisco)
-        tmedia_pisco <- read.csv("FINAL/DATA PISCO/tmedia.csv", header = T, sep = ",") %>%
+       
+       tmedia_pisco <- read.csv("FINAL/DATA PISCO/tmedia.csv", header = T, sep = ",") %>%
           tibble() %>%
           dplyr::select(-X) %>%
           mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
         View(tmedia_pisco)
         write.csv(tmedia_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/tmedia.csv")
-        colnames(tmedia_pisco)
-        pisac <- plot(Pp_pisco$fecha,Pp_pisco$PISAC, type = "l", col= 'blue',
+        colnames(tmedia_pisco)  
+       
+       pisac <- plot(Pp_pisco$fecha,Pp_pisco$PISAC, type = "l", col= 'blue',
                       main= 'Serie de Tiempo de la estación pisac', xlab= 'Años',
                       ylab= 'Precipitación')
         Paruro <- plot(Pp_pisco$fecha, Pp_pisco$PARURO, type = "l", col= 'blue',
@@ -102,9 +102,10 @@ Ramos Cerna Alejandra Gianella
         #########graficas avanzadas###########
         ########################################
         #
+ precipitacion de nuestras 5 estacione
  Llamamos  a la librería GGPLOT,que nos ayuda a gráficar. 
  
-            library(ggplot2)   
+            library(ggplot2)    
 Ahora  ejecutaremos el comando ggplot para graficar la  precipitación  en 
 
             ggplot(Pp_pisco, aes(fecha, PISAC)) +
@@ -112,10 +113,8 @@ Ahora  ejecutaremos el comando ggplot para graficar la  precipitación  en
           geom_smooth(span = 0.4)
         ggplot(Pp_pisco, aes(fecha, precipitacion)) +
           geom_line() +
-          geom_smooth(span = 0.
-![Rplot05](https://user-images.githubusercontent.com/78572913/107045499-90ac5a80-6793-11eb-99b6-0c940a4e3cdf.png)
-
-          
+          geom_smooth(span = 0.4
+          ![Rplot05](https://user-images.githubusercontent.com/78572913/107044326-1f1fdc80-6792-11eb-817e-537d523a7727.png)
 
         names(Pp_pisco)
         ggplot(Pp_pisco, aes(fecha, PARURO)) +
