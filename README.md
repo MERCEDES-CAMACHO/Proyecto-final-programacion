@@ -22,6 +22,7 @@ Ramos Cerna Alejandra Gianella
 
 ![Rplot](https://user-images.githubusercontent.com/78572913/107041783-e7fbfc00-678e-11eb-8c91-02ac8af39e89.png)
 
+
         # PRECIPITACION
         points_long_lat_pp <- raster::extract(raster_pp[[1]], long_lat, cellnumbers = T)[,1]
         data_long_lat_pp <- t(raster_pp[points_long_lat_pp])
