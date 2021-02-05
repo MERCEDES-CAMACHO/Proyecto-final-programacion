@@ -101,10 +101,9 @@ Ramos Cerna Alejandra Gianella
         #########graficas avanzadas###########
         ########################################
         #
- precipitacion de nuestras 5 estacione
  Llamamos  a la librería GGPLOT,que nos ayuda a gráficar. 
  
-            library(ggplot2)    
+            library(ggplot2)   
 Ahora  ejecutaremos el comando ggplot para graficar la  precipitación  en 
 
             ggplot(Pp_pisco, aes(fecha, PISAC)) +
@@ -112,8 +111,10 @@ Ahora  ejecutaremos el comando ggplot para graficar la  precipitación  en
           geom_smooth(span = 0.4)
         ggplot(Pp_pisco, aes(fecha, precipitacion)) +
           geom_line() +
-          geom_smooth(span = 0.4
-          ![Rplot05](https://user-images.githubusercontent.com/78572913/107044326-1f1fdc80-6792-11eb-817e-537d523a7727.png)
+          geom_smooth(span = 0.
+          
+          ![Rplot05](https://user-images.githubusercontent.com/78572913/107044326-1f1fdc80-6792-11eb-817e-537d523a7727.png
+          
 
         names(Pp_pisco)
         ggplot(Pp_pisco, aes(fecha, PARURO)) +
