@@ -114,8 +114,11 @@ Ramos Cerna Alejandra Gianella
         ########################################
         #########graficas avanzadas###########
         ########################################
-        ####precipitacion de nuestras 5 estaciones
+        #
+ precipitacion de nuestras 5 estacione
+ Llamamos  a la librería GGPLOT,que nos ayuda a gráficar. 
         library(ggplot2)
+Ahora  ejecutaremos el comando ggplot para graficar la  precipitación  en Pisac
         ggplot(Pp_pisco, aes(fecha, PISAC)) +
           geom_line() +
           geom_smooth(span = 0.4)
