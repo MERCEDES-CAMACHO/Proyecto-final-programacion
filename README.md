@@ -40,44 +40,47 @@ Ramos Cerna Alejandra Gianella
         #TEMPERATURA MEDIA
         tmedia <- (data_long_lat_tmax+data_long_lat_tmin)/2
         write.csv(tmedia, "FINAL/DATA PISCO/tmedia.csv", quote = F)
-        install.packages(c("tidyverse", "ggplot2", "dplyr"))
-        install.packages(c("tidyverse", "ggplot2", "dplyr"))
+        
+        # INSTALAMOS LAS LIBRERIAS
+        install.packages("tidyverse")
+        install.packages("ggplot2")
+        install.packages("dplyr")
+        # LLAMANOS A LAS LIBRERIAS
         library(tidyverse)
         library(ggplot2)
         library(dplyr)
-        Pp_pisco <- read.csv("FINAL/DATA PISCO/PP MENSUAL/prep.csv", header = T, sep = ",") %>%
-          tibble() %>%
-          dplyr::select(-X) %>%
-          mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
-        View(Pp_pisco)
-        Pp_pisco <- read.csv("FINAL/DATA PISCO/PP MENSUAL/prep.csv", header = T, sep = ",") %>%
-          tibble() %>%
-          dplyr::select(-X) %>%
-          mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
-        View(Pp_pisco)
-        write.csv(Pp_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/pp.csv")
-        colnames(Pp_pisco)
-        tmin_pisco <- read.csv("FINAL/DATA PISCO/TMIN/tmin.csv", header = T, sep = ",") %>%
-          tibble() %>%
-          dplyr::select(-X) %>%
-          mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
-        View(tmin_pisco)
-        write.csv(tmin_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/tmin.csv")
-        colnames(tmin_pisco)
-        tmax_pisco <- read.csv("FINAL/DATA PISCO/TMIN/tmin.csv", header = T, sep = ",") %>%
-          tibble() %>%
-          dplyr::select(-X) %>%
-          mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
-        View(tmax_pisco)
-        write.csv(tmax_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/tmax.csv")
-        colnames(tmax_pisco)
-        tmedia_pisco <- read.csv("FINAL/DATA PISCO/tmedia.csv", header = T, sep = ",") %>%
-          tibble() %>%
-          dplyr::select(-X) %>%
-          mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
-        View(tmedia_pisco)
-        write.csv(tmedia_pisco, "FINAL/DATA EN CSV/PP ESTACIONES/tmedia.csv")
-        colnames(tmedia_pisco)
+        
+       Pp_pisco <- read.csv("DATA PISCO/PP MENSUAL/prep.csv", header = T, sep = ",") %>%
+         tibble() %>%
+         dplyr::select(-X) %>%
+         mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
+       View(Pp_pisco)
+       write.csv(Pp_pisco, "DATA EN CSV/PP ESTACIONES/pp.csv")
+       colnames(Pp_pisco)
+
+tmin_pisco <- read.csv("DATA PISCO/TMIN/tmin.csv", header = T, sep = ",") %>%
+  tibble() %>%
+  dplyr::select(-X) %>%
+  mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
+View(tmin_pisco)
+write.csv(tmin_pisco, "DATA EN CSV/PP ESTACIONES/tmin.csv")
+colnames(tmin_pisco)
+
+tmax_pisco <- read.csv("DATA PISCO/TMIN/tmin.csv", header = T, sep = ",") %>%
+  tibble() %>%
+  dplyr::select(-X) %>%
+  mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
+View(tmax_pisco)
+write.csv(tmax_pisco, "DATA EN CSV/PP ESTACIONES/tmax.csv")
+colnames(tmax_pisco)
+
+tmedia_pisco <- read.csv("DATA EN CSV/PP ESTACIONES/tmedia.csv", header = T, sep = ",") %>%
+  tibble() %>%
+  dplyr::select(-X) %>%
+  mutate(fecha = seq(as.Date("1981-01-01"), as.Date("2016-12-01"), by = "month"))
+View(tmedia_pisco)
+write.csv(tmedia_pisco, "DATA EN CSV/PP ESTACIONES/tmedia.csv")
+colnames(tmedia_pisco)
         pisac <- plot(Pp_pisco$fecha,Pp_pisco$PISAC, type = "l", col= 'blue',
                       main= 'Serie de Tiempo de la estación pisac', xlab= 'Años',
                       ylab= 'Precipitación')
